@@ -1,5 +1,6 @@
-import { RIOT_BASE_URL } from "../api/apiKey"
+import { RIOT_API_KEY, RIOT_BASE_URL } from "../api/apiKey"
 import { ChampionInfo } from "../types/Champion";
+import { RotationType } from "../types/ChampionRotation";
 import { ItemType } from "../types/Item";
 
 // 최신 버전
@@ -42,3 +43,15 @@ export const getItems = async () => {
     console.error("아이템 API 에러:", error);    
   }
 }
+
+// 로테이션
+export const getRotations = async () => {
+  try{
+    const res = await fetch(`https://kr.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${RIOT_API_KEY}`);
+    const data: RotationType = await res.json();    
+    return data;
+  }catch(error){
+    console.error("로테이션 데이터 가져오기 에러:", error);    
+  }
+}
+
