@@ -11,6 +11,7 @@ export interface ChampionThumb {
 
 export interface ChampionInfo {
   id: string;
+  key: string;
   name: string;
   title: string;
   blurb: string;
