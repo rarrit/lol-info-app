@@ -1,27 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getChampions, getRotations } from "../utils/serverApi";
+// import { getChampions, getRotations } from "../utils/serverApi";
 import { ChampionInfo } from "../types/Champion";
+import { getChampionRotation } from "../utils/riotApi";
 
 const RotationPage = () => {
   const [rotationChampion, setRotationChampion] = useState<ChampionInfo[]>([]); 
 
   useEffect(() => {
     const fetchData = async () => {
-      const rotations = await getRotations();  
-      const champions = await getChampions();
-      const freeChampionIds = rotations?.freeChampionIds;
-      const rotationsChampion: ChampionInfo[] = [];
-
-      if (!freeChampionIds) return;
-
-      // 챔피언 필터링
-      champions.forEach((champ) => {
-        if (freeChampionIds?.includes(parseInt(champ.key))) {
-          rotationsChampion.push(champ);
-        }
-      });
+      const rotationsChampion = await getChampionRotation();
 
       // 필터링된 로테이션 챔피언 목록을 상태에 저장
       setRotationChampion(rotationsChampion);
