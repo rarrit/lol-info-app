@@ -1,3 +1,5 @@
+"use server";
+
 import { RIOT_API_KEY, RIOT_BASE_URL } from "../api/apiKey"
 import { ChampionInfo } from "../types/Champion";
 import { RotationType } from "../types/ChampionRotation";
