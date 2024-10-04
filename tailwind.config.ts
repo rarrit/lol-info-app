@@ -11,6 +11,7 @@ const config: Config = {
       backgroundImage: {
         lol01: "url('/assets/images/bg-lol-01.jpg')",
         lol02: "url('/assets/images/bg-lol-02.jpg')",
+        lol03: "url('/assets/images/bg-lol-03.jpg')",
         icon01: "url('/assets/images/icon-logo.png')",
       },
       boxShadow: {
