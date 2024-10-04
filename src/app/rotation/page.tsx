@@ -11,7 +11,7 @@ const RotationPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const rotationsChampion = await getChampionRotation();
-
+      console.log(rotationsChampion);
       // 필터링된 로테이션 챔피언 목록을 상태에 저장
       setRotationChampion(rotationsChampion);
     };

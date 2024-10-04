@@ -1,4 +1,6 @@
 "use server";
+// 목적 : 서버에서 실행될 수 있게 하는 함수를 만듬
+// 라우터핸들러와 서버액션의 사용성에 대해서 주관적임, 직접 써보면서 
 
 import { RIOT_API_KEY, RIOT_BASE_URL } from "../api/apiKey"
 import { ChampionInfo } from "../types/Champion";
@@ -28,10 +30,23 @@ export const getChampions = async () => {
     const championList: ChampionInfo[] = Object.values(data.data); 
     return championList;
   } catch (error) {
-    console.error('챔피언 데이터 가져오기 오류:', error);
-    throw error; // 오류를 다시 던져 호출자에게 알림
+    console.error("챔피언 데이터 가져오기 에러:", error);
+    throw error; 
   }
 };
+
+// 챔피언 상세
+export const getChampionDetail = async ( id : string ) => {
+  try {
+    const latestVersion = await getLatestVersionUrl();
+    const res = await fetch(`${RIOT_BASE_URL}/cdn/${latestVersion}/data/ko_KR/champion/${id}.json`);
+    const { data } = await res.json();
+    return data;
+  }catch (error) {
+    console.error("챔피언 상세 데이터 가져오기 에러:", error);
+    throw error; 
+  }
+}
 
 // 아이템
 export const getItems = async () => {
@@ -43,6 +58,7 @@ export const getItems = async () => {
     return itemList;
   }catch(error){
     console.error("아이템 API 에러:", error);    
+    throw error; 
   }
 }
 
