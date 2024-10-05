@@ -3,7 +3,7 @@ import { RIOT_BASE_URL } from "@/app/api/apiKey";
 import { ItemType } from "@/app/types/Item"
 import { getLatestVersionUrl } from "@/app/utils/serverApi";
 import Image from "next/image";
-// import parse from 'html-react-parser';
+import ItemDesc from "./itemDesc";
 
 type ItemCardProps = {
   item: ItemType;
@@ -25,7 +25,8 @@ const ItemCard: React.FC<ItemCardProps> = async ({ item }) => {
           />
         )}
         <strong className="mt-[10px] text-[rgba(245,79,79,1)] text-center">{item.name}</strong>
-        {/* <p>{parse(item.description)} </p> */}
+        <p><span className="text-[18px] font-bold">{item.gold.total}</span>원</p>        
+        <ItemDesc description={item.description} />
       </div>
     </div>
   )
