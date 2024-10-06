@@ -9,10 +9,10 @@ const ItemList = async () => {
   if(!items) return <div>아이템이 없습니다.</div>
 
   return (
-    <div id="itemList" className="w-full bg-lol04 bg-fixed bg-center bg-no-repeat py-[60px]">
+    <div id="itemList" className="w-full bg-lol04 bg-fixed bg-center bg-no-repeat py-[60px] max-t:px-[15px]">
       <div className="inner w-full max-w-[1440px] m-auto">
         <h1 
-          className="flex justify-center text-[60px] mt-[30px] mb-[40px]"
+          className="flex justify-center text-[60px] mt-[30px] mb-[40px] max-m:text-[30px]"
           style={{
             textShadow: ".3px .3px 7px rgb(241, 215, 40, 1)",
           }}
