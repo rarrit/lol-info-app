@@ -48,4 +48,20 @@ body {
   .item-desc br { 
     display: none;
   }  
+  .loading-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;    
+  }
+  .loading-ui p {
+    padding-top: 60px;
+    background-size: 50px;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
 }

@@ -1,23 +1,40 @@
+"use client";
+
 import { RIOT_BASE_URL } from "@/app/api/apiKey";
 import { ChampionInfo } from "@/app/types/Champion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 type ChampionCardProps = {
   champion: ChampionInfo; // champion prop을 정의
 };
 
 const ChampionCard: React.FC<ChampionCardProps> = ({ champion }) => {
-  
+  const [loading, setLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setLoading(false);  // 이미지 로딩 완료 시 로딩 상태를 false로 변경
+  };
+
   return (
     <div className="group relative w-[calc(25%-10px)] overflow-hidden max-n:w-[calc(33.333%-10px)] max-t:w-[calc(50%-10px)] max-m:w-[100%] rounded-[10px] shadow-custom">      
       <div className="champion-list-image w-full py-[30%]">
+        {
+          loading ? (
+            <div className="loading-ui">
+              <p className="bg-loading">로딩중입니다.</p>
+            </div>
+          ) : ("")
+        }
+
         {champion.image && (
           <Image 
             src={`${RIOT_BASE_URL}/cdn/img/champion/splash/${champion.id}_0.jpg`} 
             className="w-full h-full transition-all duration-500 ease-in-out transform group-hover:scale-110"
             layout="fill"
-            alt={champion ? champion.name : "챔피언 이미지"}           
+            alt={champion ? champion.name : "챔피언 이미지"} 
+            onLoadingComplete={handleLoadingComplete}         
           />
         )}
       </div>

@@ -15,7 +15,7 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
   
   const championKey = Object.keys(champion)[0];
   const championDetail: ChampionDetail = champion[championKey]; // 챔피언의 상세 정보
-  const championSkins = championDetail.skins;
+  const championSkins = championDetail.skins;  
 
   return (
     <div id="championDetail" className="h-full pb-[60px]">      
@@ -60,7 +60,7 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
                   <span 
                     className={`relative flex h-[5px] bg-[rgba(241,40,40,1)] rounded-[10px]`}
                     style={{
-                      width: `${championDetail.info.attack * 10}%`
+                      width: `${championDetail.info.attack !== 0 ? championDetail.info.attack * 10 : 55}%`
                     }}
                   ></span>
                 </dd>
@@ -71,7 +71,7 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
                   <span 
                     className={`flex h-[5px] bg-[rgba(108,241,40,1)] rounded-[10px]`}
                     style={{
-                      width: `${championDetail.info.defense * 10}%`
+                      width: `${championDetail.info.defense !== 0 ? championDetail.info.defense * 10 : 30}%`
                     }}
                   ></span>
                 </dd>
@@ -82,7 +82,7 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
                   <span 
                     className="flex h-[5px] bg-[rgba(47,40,241,1)] rounded-[10px]"
                     style={{
-                      width: `${championDetail.info.magic * 10}%`
+                      width: `${championDetail.info.magic !== 0 ? championDetail.info.magic * 10 : 44}%`
                     }}
                   ></span>
                 </dd>
@@ -93,7 +93,7 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
                   <span 
                     className="flex w-[${championDetail.info.difficulty * 10}%] h-[5px] bg-[rgba(241,238,40,1)] rounded-[10px]"
                     style={{
-                      width: `${championDetail.info.difficulty * 10}%`
+                      width: `${championDetail.info.difficulty !== 0 ? championDetail.info.difficulty * 10 : 76}%`
                     }}
                   ></span>
                 </dd>
@@ -107,7 +107,7 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
                 championDetail.spells.map(spell => {
                   return (
                     <li key={spell.id} className="flex flex-1 flex-col items-center justify-start gap-[5px] max-m:flex-none max-m:w-[calc(50%-10px)]">
-                      <div>
+                      <div>                        
                         <Image 
                           src={`${RIOT_BASE_URL}/cdn/${latestVersion}/img/spell/${spell.id}.png`} 
                           className="m-auto rounded-[5px] shadow-custom-white"
@@ -138,6 +138,9 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
                 championSkins.map(skin => {
                   return (
                     <div key={skin.id} className="relative flex flex-col items-center w-[calc(33.333%-10px)] py-[10%] max-t:w-full max-t:py-[30%] max-m:w-full max-m:py-[30%]">
+                      <div className="loading-ui">
+                        <p className="bg-loading">로딩중입니다.</p>
+                      </div>
                       <Image
                         src={`${RIOT_BASE_URL}/cdn/img/champion/splash/${championDetail.id}_${skin.num}.jpg`}
                         layout="fill"
