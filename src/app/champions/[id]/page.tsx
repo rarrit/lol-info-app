@@ -19,43 +19,29 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
 
   return (
     <div id="championDetail" className="h-full pb-[60px]">      
-      <div 
-        className="detail-top relative pt-[44px]"
-        style={{
-          backgroundImage: `url('${RIOT_BASE_URL}/cdn/img/champion/splash/${championDetail.id}_0.jpg')`,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
-      >
+      <div className="detail-top relative pt-[44px]">
         <div 
-          className="absolute top-0 left-0 w-full h-[90%] z-[1]"
+          className="absolute top-0 left-0 w-full h-[90%] bg-no-repeat bg-center bg-cover z-[1]"
           style={{
             backgroundImage: `url('${RIOT_BASE_URL}/cdn/img/champion/splash/${championDetail.id}_0.jpg')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
             filter: "blur(15px)"
           }}
         ></div>
         <div 
-          className="absolute top-0 left-0 w-full h-full z-[2]"
+          className="absolute top-0 left-0 w-full h-full z-[2] bg-no-repeat bg-center bg-contain max-m:bg-cover"
           style={{
             backgroundImage: `url('${RIOT_BASE_URL}/cdn/img/champion/splash/${championDetail.id}_0.jpg')`,
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,.5)] z-[3]"></div>
         <div className="relative z-20 flex justify-center w-full h-full flex max-w-[1440px] m-auto px-[30px] pt-[15%] pb-[20%] gap-[10px]">
           <div className="tBox w-full max-w-[600px]">
             <h1 className="flex flex-col justify-center items-center">                     
-              <p className="text-[40px] font-bold bg-icon01 bg-no-repeat bg-[length:50px] bg-top pt-[60px]">{championDetail.name}</p>
-              <span className="text-[13px] shadow-custom-white bg-[#111] rounded-[10px] mt-[5px] mb-[15px] py-[5px] px-[15px]">{championDetail.title}</span>
+              <p className="text-[40px] font-bold bg-icon01 bg-no-repeat bg-[length:50px] bg-top pt-[60px] max-m:text-[30px]">{championDetail.name}</p>
+              <span className="text-[13px] shadow-custom-white bg-[#111] rounded-[10px] mt-[5px] mb-[15px] py-[5px] px-[15px] max-m:text-[12px]">{championDetail.title}</span>
             </h1>        
             <p 
-              className="text-center text-[14px] break-keep"
+              className="text-center text-[14px] break-keep max-m:text-[13px]"
               style={{
                 textShadow: ".1px .1px 3px rgb(241, 215, 40, .8)",
               }}
@@ -63,9 +49,9 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
           </div>
         </div>            
       </div>
-      <div className="w-full max-w-[1600px] m-auto px-[30px]">    
+      <div className="w-full max-w-[1600px] m-auto px-[30px] max-m:px-[15px]">    
         <div className="infoBox flex items-stretch gap-[20px] mt-[40px] max-t:flex-col">
-          <div className="w-[calc(50%-10px)] bg-[#111] shadow-custom rounded-[10px] p-[30px] max-t:w-full">
+          <div className="w-[calc(50%-10px)] bg-[#111] shadow-custom rounded-[10px] p-[30px] max-t:w-full max-m:p-[15px]">
             <h2 className="text-[24px] font-medium mb-[10px] pb-[5px] border-b border-[rgba(255,255,255,.4)]">Info</h2>
             <div className="infoBox">
               <dl className="flex items-center gap-[5px]">
@@ -114,7 +100,7 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
               </dl>
             </div>
           </div>
-          <div className="w-[calc(50%-10px)] bg-[#111] shadow-custom rounded-[10px] p-[30px] max-t:w-full">      
+          <div className="w-[calc(50%-10px)] bg-[#111] shadow-custom rounded-[10px] p-[30px] max-t:w-full max-m:p-[15px]">      
             <h2 className="text-[24px] font-medium mb-[10px] pb-[5px] border-b border-[rgba(255,255,255,.4)]">Skills<span className="text-[12px] text-[rgba(255,255,255,.3)] ml-[10px]">(마우스를 올리면 상세 정보를 확인할 수 있습니다.)</span></h2>
             <ul className="flex items-start gap-[10px] max-m:flex-wrap">              
               {
@@ -145,12 +131,11 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
           </div>
         </div>
         <div className="infoBox mt-[20px]">
-          <div className="w-full bg-[#111] shadow-custom rounded-[10px] p-[30px]">
+          <div className="w-full bg-[#111] shadow-custom rounded-[10px] p-[30px] max-m:p-[15px]">
             <h2 className="text-[24px] font-medium mb-[10px] pb-[5px] border-b border-[rgba(255,255,255,.4)]">Skins</h2>
             <div className="skinList flex flex-wrap items-center gap-[10px]">
               {            
                 championSkins.map(skin => {
-                  console.log("skin", skin);
                   return (
                     <div key={skin.id} className="relative flex flex-col items-center w-[calc(33.333%-10px)] py-[10%] max-t:w-full max-t:py-[30%] max-m:w-full max-m:py-[30%]">
                       <Image
@@ -159,7 +144,7 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
                         alt={skin.id}
                         className="rounded-lg shadow-lg"
                       />
-                      <p className="absolute top-[5px] right-[5px] z-20 min-w-[120px] flex items-center justify-center p-[8px] font-medium bg-black bg-opacity-70 rounded-[10px]">{skin.name}</p>
+                      <p className="absolute top-[5px] right-[5px] z-20 min-w-[120px] flex items-center justify-center p-[8px] font-medium bg-black bg-opacity-70 rounded-[10px] max-m:text-[14px]">{skin.name}</p>
                     </div>
                   );
                 })

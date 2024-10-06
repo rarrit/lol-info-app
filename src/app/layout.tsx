@@ -76,7 +76,7 @@ export default function RootLayout({
         {children}
         <footer id="footer" className="fixed z-50 bottom-0 left-0 w-full bg-[rgba(255,255,255,.08)] shadow-custom">
           <div className="inner flex justify-center w-full max-w-[1440px] m-auto px-[30px] py-[5px] max-m:px-[15px]">
-            <Link href="https://github.com/rarrit" className="text-[rgba(255,255,255,.5)] text-[13px]" target="_blank">Copyright 2024. <strong className="text-white mr-[5px]">Rarrit</strong> All pictures cannot be copied without permission</Link>
+            <Link href="https://github.com/rarrit" className="text-[rgba(255,255,255,.5)] text-[13px] max-m:text-[10px]" target="_blank">Copyright 2024. <strong className="text-white mr-[5px]">Rarrit</strong> All pictures cannot be copied without permission</Link>
           </div>
         </footer>
       </body>
