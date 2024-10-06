@@ -21,7 +21,7 @@ const ChampionCard: React.FC<ChampionCardProps> = ({ champion }) => {
           />
         )}
       </div>
-      <h2 className="absolute top-[5px] right-[5px] z-20 min-w-[120px] flex items-center justify-center p-[8px] font-medium bg-black bg-opacity-70 rounded-[10px]">{champion.name}</h2>              
+      <h2 className="absolute top-[5px] right-[5px] z-20 min-w-[120px] flex items-center justify-center p-[8px] font-medium bg-black bg-opacity-70 rounded-[10px] max-t:text-[14px]">{champion.name}</h2>              
       <div className="info absolute top-0 left-0 w-full h-full z-10 bg-black bg-opacity-50 transition duration-500 ease-in-out group-hover:bg-opacity-0"></div>                  
       <Link href={`/champions/${champion.id}`} className="absolute top-0 left-0 flex w-full h-full opacity-0 z-30">{champion.name} 상세페이지로 이동</Link>
     </div>

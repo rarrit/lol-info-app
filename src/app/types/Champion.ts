@@ -42,7 +42,7 @@ export interface ChampionDetail {
   name: string;
   title: string;
   image: CampionDetailImage;
-  skins: ChampionDetailSkin;
+  skins: ChampionDetailSkin[];
   lore: string;
   blurb: string;
   info: {
