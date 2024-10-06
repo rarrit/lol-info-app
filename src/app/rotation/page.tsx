@@ -26,10 +26,10 @@ const RotationPage = () => {
 
   return (
 
-    <div id="championList" className="w-full bg-lol03 bg-fixed bg-center bg-no-repeat py-[60px]">
+    <div id="championList" className="w-full bg-lol03 bg-fixed bg-center bg-no-repeat py-[60px] px-[15px]">
       <div className="inner w-full max-w-[1440px] m-auto">
         <h1 
-          className="flex justify-center text-[60px] mt-[30px] mb-[40px]"
+          className="flex justify-center text-[60px] mt-[30px] mb-[40px] max-m:text-[30px]"
           style={{
             textShadow: ".3px .3px 7px rgb(241, 215, 40, 1)",
           }}
@@ -54,7 +54,7 @@ const RotationPage = () => {
                     />
                   )}
                 </div>
-                <h2 className="absolute top-[5px] right-[5px] z-20 min-w-[120px] flex items-center justify-center p-[8px] font-medium bg-black bg-opacity-70 rounded-[10px]">{champ.name}</h2>              
+                <h2 className="absolute top-[5px] right-[5px] z-20 min-w-[120px] flex items-center justify-center p-[8px] font-medium bg-black bg-opacity-70 rounded-[10px] max-t:text-[14px]">{champ.name}</h2>              
                 <div className="info absolute top-0 left-0 w-full h-full z-10 bg-black bg-opacity-50 transition duration-500 ease-in-out group-hover:bg-opacity-0"></div>                  
                 <Link href={`/champions/${champ.id}`} className="absolute top-0 left-0 flex w-full h-full opacity-0 z-30">{champ.name} 상세페이지로 이동</Link>
               </li>
