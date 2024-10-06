@@ -15,8 +15,8 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
   
   const championKey = Object.keys(champion)[0];
   const championDetail: ChampionDetail = champion[championKey]; // 챔피언의 상세 정보
+  const championSkins = championDetail.skins;
 
-  console.log(championDetail.image.full);
   return (
     <div id="championDetail" className="h-full pb-[60px]">      
       <div 
@@ -63,9 +63,9 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
           </div>
         </div>            
       </div>
-      <div className="w-full max-w-[1600px] m-auto">    
-        <div className="infoBox flex items-stretch gap-[20px] mt-[40px]">
-          <div className="w-[calc(50%-10px)] bg-[#111] shadow-custom rounded-[10px] p-[30px]">
+      <div className="w-full max-w-[1600px] m-auto px-[30px]">    
+        <div className="infoBox flex items-stretch gap-[20px] mt-[40px] max-t:flex-col">
+          <div className="w-[calc(50%-10px)] bg-[#111] shadow-custom rounded-[10px] p-[30px] max-t:w-full">
             <h2 className="text-[24px] font-medium mb-[10px] pb-[5px] border-b border-[rgba(255,255,255,.4)]">Info</h2>
             <div className="infoBox">
               <dl className="flex items-center gap-[5px]">
@@ -114,13 +114,13 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
               </dl>
             </div>
           </div>
-          <div className="w-[calc(50%-10px)] bg-[#111] shadow-custom rounded-[10px] p-[30px]">      
-            <h2 className="text-[24px] font-medium mb-[10px] pb-[5px] border-b border-[rgba(255,255,255,.4)]">Skills</h2>
-            <ul className="flex items-start gap-[10px]">              
+          <div className="w-[calc(50%-10px)] bg-[#111] shadow-custom rounded-[10px] p-[30px] max-t:w-full">      
+            <h2 className="text-[24px] font-medium mb-[10px] pb-[5px] border-b border-[rgba(255,255,255,.4)]">Skills<span className="text-[12px] text-[rgba(255,255,255,.3)] ml-[10px]">(마우스를 올리면 상세 정보를 확인할 수 있습니다.)</span></h2>
+            <ul className="flex items-start gap-[10px] max-m:flex-wrap">              
               {
                 championDetail.spells.map(spell => {
                   return (
-                    <li key={spell.id} className="flex flex-1 flex-col items-center justify-start gap-[5px]">
+                    <li key={spell.id} className="flex flex-1 flex-col items-center justify-start gap-[5px] max-m:flex-none max-m:w-[calc(50%-10px)]">
                       <div>
                         <Image 
                           src={`${RIOT_BASE_URL}/cdn/${latestVersion}/img/spell/${spell.id}.png`} 
@@ -143,6 +143,29 @@ const ChampionsPage = async ({ params } : { params: { id: string }}) => {
               }
             </ul>
           </div>
+        </div>
+        <div className="infoBox mt-[20px]">
+          <div className="w-full bg-[#111] shadow-custom rounded-[10px] p-[30px]">
+            <h2 className="text-[24px] font-medium mb-[10px] pb-[5px] border-b border-[rgba(255,255,255,.4)]">Skins</h2>
+            <div className="skinList flex flex-wrap items-center gap-[10px]">
+              {            
+                championSkins.map(skin => {
+                  console.log("skin", skin);
+                  return (
+                    <div key={skin.id} className="relative flex flex-col items-center w-[calc(33.333%-10px)] py-[10%] max-t:w-full max-t:py-[30%] max-m:w-full max-m:py-[30%]">
+                      <Image
+                        src={`${RIOT_BASE_URL}/cdn/img/champion/splash/${championDetail.id}_${skin.num}.jpg`}
+                        layout="fill"
+                        alt={skin.id}
+                        className="rounded-lg shadow-lg"
+                      />
+                      <p className="absolute top-[5px] right-[5px] z-20 min-w-[120px] flex items-center justify-center p-[8px] font-medium bg-black bg-opacity-70 rounded-[10px]">{skin.name}</p>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </div>          
         </div>
         <div className="btnArea flex items-center justify-center mt-[30px] mb-[60px] group">
           <Link href={"/champions"} className="bg-[#131313] shadow-custom rounded-[10px] px-[40px] py-[20px] group-hover:bg-[rgba(40,40,241,1)]">목록으로 돌아가기</Link>
