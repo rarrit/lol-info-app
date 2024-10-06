@@ -27,6 +27,7 @@ const config: Config = {
         'max-n': {'max': '1460px'}, 
         'max-t': {'max': '1260px'}, 
         'max-m': {'max': '600px'},  
+        'max-sm': {'max': '400px'},  
       },
     },
   },
