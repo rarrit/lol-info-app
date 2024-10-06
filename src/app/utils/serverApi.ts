@@ -52,7 +52,11 @@ export const getChampionDetail = async ( id : string ) => {
 export const getItems = async () => {
   try{
     const latestVersion = await getLatestVersionUrl();
-    const res = await fetch(`${RIOT_BASE_URL}/cdn/${latestVersion}/data/ko_KR/item.json`);
+    const res = await fetch(`${RIOT_BASE_URL}/cdn/${latestVersion}/data/ko_KR/item.json`,
+      {
+        cache: "force-cache"
+      }
+    );
     const data = await res.json();
     const itemList: ItemType[] = Object.values(data.data);
     return itemList;

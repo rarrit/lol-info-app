@@ -12,12 +12,13 @@ const config: Config = {
         lol01: "url('/assets/images/bg-lol-01.jpg')",
         lol02: "url('/assets/images/bg-lol-02.jpg')",
         lol03: "url('/assets/images/bg-lol-03.jpg')",
-        lol04: "url('/assets/images/bg-lol-04.jpg')",
+        lol04: "url('/assets/images/bg-lol-04.jpg')",        
         icon01: "url('/assets/images/icon-logo.png')",
+        loading: "url('/assets/images/loading.gif')",
       },
       boxShadow: {
         'custom': '0.5px 0.5px 10px rgba(0, 0, 0, 0.8)',
-        'custom-white': '0.5px 0.5px 10px rgba(255, 255, 255, 0.8)',
+        'custom-white': '0.5px 0.5px 10px rgba(255, 255, 255, 0.8)'        
       },      
       colors: {
         background: "var(--background)",
