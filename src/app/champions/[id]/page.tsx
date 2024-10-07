@@ -4,6 +4,22 @@ import { getChampionDetail, getLatestVersionUrl } from "@/app/utils/serverApi";
 import Image from "next/image";
 import Link from "next/link";
 
+
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export function generateMetadata({ params }: Props) {
+  return {
+    title: `LOL INFO APP - ${params.id} 챔피언 상세 페이지`,
+    description: `${params.id} 상세 정보 페이지 입니다.`,
+  };
+}
+
+
+
 const ChampionsPage = async ({ params } : { params: { id: string }}) => {
   const champion = await getChampionDetail(params.id);
   const latestVersion = await getLatestVersionUrl();
