@@ -14,6 +14,7 @@ const config: Config = {
         lol03: "url('/assets/images/bg-lol-03.jpg')",
         lol04: "url('/assets/images/bg-lol-04.jpg')",        
         icon01: "url('/assets/images/icon-logo.png')",
+        error: "url('/assets/images/img-error.png')",
         loading: "url('/assets/images/loading.gif')",
       },
       boxShadow: {
