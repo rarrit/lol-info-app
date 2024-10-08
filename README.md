@@ -1,36 +1,203 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## :ledger: 리그오브레전드 정보 프로젝트 
 
-## Getting Started
+![lol-main](https://github.com/user-attachments/assets/257f9849-6fb8-4169-9e3f-4edce8e775d1)
 
-First, run the development server:
+### :rocket: 베포 링크
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- vercel
+  - [https://lol-info-app-chi.vercel.app/](https://lol-info-app-chi.vercel.app/)
+- github
+  - [https://github.com/rarrit/lol-info-app](https://github.com/rarrit/lol-info-app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### :one: 프로젝트 설명
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+NextJS와 TypeScript을 사용하고 Riot API를 활용하여 리그오브레전드의 다양한 데이터를 조회하고 이를 기반으로 생성한 프로젝트 입니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **_프로젝트 기간_**
+  - 2024.09.30 ~ 2024.10.07
+- **_프로젝트 명_**
+  - 리그오브레전드 정보 앱
+- **_프로젝트 목표_**
+  - Next.js를 사용한 리그오브레전드 정보 반응형 웹사이트 제작
 
-## Learn More
+### :two: STACK
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-To learn more about Next.js, take a look at the following resources:
+### :three: 프로젝트 구조
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<details>
+<summary>전체 프로젝트 구조</summary>
+📦app<br/>
+ ┣ 📂_components<br/>
+ ┃ ┣ 📂champions<br/>
+ ┃ ┃ ┣ 📜ChampionCard.tsx<br/>
+ ┃ ┃ ┗ 📜ChampionList.tsx<br/>
+ ┃ ┗ 📂items<br/>
+ ┃ ┃ ┣ 📜itemCard.tsx<br/>
+ ┃ ┃ ┣ 📜itemDesc.tsx<br/>
+ ┃ ┃ ┗ 📜itemList.tsx<br/>
+ ┣ 📂api<br/>
+ ┃ ┣ 📂rotation<br/>
+ ┃ ┃ ┗ 📜route.ts<br/>
+ ┃ ┗ 📜apiKey.ts<br/>
+ ┣ 📂champions<br/>
+ ┃ ┣ 📂[id]<br/>
+ ┃ ┃ ┗ 📜page.tsx<br/>
+ ┃ ┣ 📜layout.tsx<br/>
+ ┃ ┣ 📜loading.tsx<br/>
+ ┃ ┗ 📜page.tsx<br/>
+ ┣ 📂fonts<br/>
+ ┃ ┣ 📜GeistMonoVF.woff<br/>
+ ┃ ┗ 📜GeistVF.woff<br/>
+ ┣ 📂items<br/>
+ ┃ ┣ 📜loading.tsx<br/>
+ ┃ ┗ 📜page.tsx<br/>
+ ┣ 📂rotation<br/>
+ ┃ ┣ 📜loading.tsx<br/>
+ ┃ ┗ 📜page.tsx<br/>
+ ┣ 📂types<br/>
+ ┃ ┣ 📜Champion.ts<br/>
+ ┃ ┣ 📜ChampionRotation.ts<br/>
+ ┃ ┗ 📜Item.ts<br/>
+ ┣ 📂utils<br/>
+ ┃ ┣ 📜riotApi.ts<br/>
+ ┃ ┗ 📜serverApi.ts<br/>
+ ┣ 📜favicon.ico<br/>
+ ┣ 📜global-error.tsx<br/>
+ ┣ 📜globals.css<br/>
+ ┣ 📜layout.tsx<br/>
+ ┣ 📜loading.tsx<br/>
+ ┗ 📜page.tsx
+</details>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### :four: 디렉토리 설명
 
-## Deploy on Vercel
+#### :pushpin: 4-1) app \> _components
+공통 컴포넌트 디렉토리
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `ChampionList.tsx`: 챔피언 리스트
+- `ChampionCard.tsx`: 챔피언 리스트에 출력될 챔피언 카드
+- `ItemList.tsx`: 아이템 리스트 
+- `ItemCard.tsx`: 아이템 카드 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### :pushpin: 4-2) app \> api
+api key값과 챔피언 로테이션 라우터 핸들러를 세팅했습니다..
+
+- `rotation > route`: 로테이션 라우트 핸들러
+- `apiKey.ts`: api key 정의
+
+#### :pushpin: 4-3) app \> utils
+초기 api 세팅 디렉토리, api 관련 세팅이 되어있습니다. 
+
+- `serverApi.ts`: API 최신 버전, 아이템, 챔피언 최신 정보를 가져오고 해당 버전에 맞는 데이터를 요청하여 반환합니다.
+- `riotApi.ts`: 라우트 핸들러를 통한 로테이션 챔피언 데이터를 반환합니다.
+
+#### :pushpin: 4-4) app \> champions
+챔피언 리스트, 챔피언 상세페이지, 해당 페이지에서 최신 챔피언 리스트를 조회할 수 있으며, 클릭해서 상세 정보를 확인할 수 있습니다.
+
+#### :pushpin: 4-5) app \> items
+아이템 리스트, 아이템 상세페이지, 해당 페이지에서 리그오브레전드의 아이템 리스트를 확인할 수 있습니다.
+
+#### :pushpin: 4-6) app \> rotation
+매주 무료로 플레이할 수 있는 챔피언들의 목록을 확인할 수 있습니다.
+
+#### :pushpin: 4-7) app \> layout.tsx
+공통 헤더 및 푸터 를 생성 후 헤더에 챔피언,아이템,로테이션 메뉴를 생성
+
+#### :pushpin: 4-8) app \> types
+이번 프로젝트에서 사용할 정보를 정의한 타입 인터페이스입니다.
+
+#### :pushpin: 4-9) app \> loading.tsx
+전역으로 사용되는 로딩 컴포넌트입니다.
+
+#### :pushpin: 4-10) app \> global-error.tsx
+전역으로 사용되는 에러 컴포넌트입니다.
+
+### :five: 작업 목록
+
+#### :pushpin: 5-1) 메인 페이지
+메인 페이지에서는 리그오브레전드의 인기 챔피언인 징크스를 배경화면으로 설정하며, 어떤 웹사이트인지 간접적으로 설명하려 했습니다. "Meet your own champion" 문구와 버튼을 통해 챔피언 리스트 페이지로 이동이 가능합니다.
+
+![lol-main](https://github.com/user-attachments/assets/257f9849-6fb8-4169-9e3f-4edce8e775d1)
+
+- `페이지 링크`
+  - [https://lol-info-app-chi.vercel.app/](https://lol-info-app-chi.vercel.app/)
+
+#### :pushpin: 5-2) 로테이션 챔피언 리스트
+환경 변수에서 API키 값을 정의하고 호출한 현재 무료로 플레이 가능한 챔피언 리스트로 구성되어 있습니다. 
+
+- `페이지 링크`
+  - [https://lol-info-app-chi.vercel.app/rotation](https://lol-info-app-chi.vercel.app/rotation)
+- `관련 글`
+  - [[2차] Next.js 리그오브레전드 정보 프로젝트 (모든 리스트 페이지 구현 완료)](https://rarrit.github.io/mini/til/next-lol02/)
+
+![lol-rotation](https://github.com/user-attachments/assets/5d11213a-36ad-40af-a55e-244d6d35dad0)
+
+#### :pushpin: 5-3) 전체 챔피언 리스트
+라이엇 API의 최신 버전과 챔피언 데이터를 반환하여 해당 페이지에서 최신 챔피언 리스트를 조회할 수 있으며, 클릭해서 상세 정보를 확인할 수 있습니다.
+
+- `페이지 링크`
+  - [https://lol-info-app-chi.vercel.app/champions](https://lol-info-app-chi.vercel.app/champions)
+- `관련 글`
+  - [[1차] Next.js 리그오브레전드 정보 프로젝트 (초기 세팅)](https://rarrit.github.io/mini/til/next-lol01/)
+  - [[2차] Next.js 리그오브레전드 정보 프로젝트 (모든 리스트 페이지 구현 완료)](https://rarrit.github.io/mini/til/next-lol02/)
+
+![lol-champion](https://github.com/user-attachments/assets/72337f54-bf9a-47cb-b532-e5e5c11e7fb8)
+
+#### :pushpin: 5-4) 챔피언 상세페이지
+전체 챔피언 리스트 및 로테이션 챔피언 리스트에서 챔피언을 선택하면 선택한 챔피언의 상세 페이지입니다. 해당 페이지에서 챔피언의 스킬 및 스킨 등 정보를 확인할 수 있습니다.
+
+- `페이지 링크`
+  - [https://lol-info-app-chi.vercel.app/champions/Ezreal](https://lol-info-app-chi.vercel.app/champions/Ezreal)
+- `관련 글`
+  - [[3차] Next.js 리그오브레전드 정보 프로젝트 (챔피언 상세페이지 구현)](https://rarrit.github.io/mini/til/next-lol03/)
+
+![lol-detail](https://github.com/user-attachments/assets/7d1a7b77-0cfb-4fc0-a632-53256c3a2f6d)
+
+#### :pushpin: 5-5) 전체 아이템 리스트
+리그오브레전드의 모든 아이템의 정보를 확인할 수 있는 리스트 페이지 입니다.
+
+- `페이지 링크`
+  - [https://lol-info-app-chi.vercel.app/items](https://lol-info-app-chi.vercel.app/items)
+- `관련 글`
+  - [[2차] Next.js 리그오브레전드 정보 프로젝트 (모든 리스트 페이지 구현 완료)](https://rarrit.github.io/mini/til/next-lol02/)
+
+![lol-item-list](https://github.com/user-attachments/assets/82e6fbf0-3761-4180-9944-be0fe9ff152c)
+
+#### :pushpin: 5-6) 로딩 및 에러
+전역으로 설정된 로딩 및 에러를 구현했으며, 특정 이미지가 렌더링될 때 "로딩중" 문구를 기입하였습니다.
+
+- `관련 글`
+  - [[5차] Next.js 리그오브레전드 정보 프로젝트 (로딩 및 에러](https://rarrit.github.io/mini/til/next-lol05/)
+
+![lol-detail](https://github.com/user-attachments/assets/7d1a7b77-0cfb-4fc0-a632-53256c3a2f6d)
+
+#### :pushpin: 5-7) 반응형
+PC부터 MOBILE까지 확인할 수 있도록 반응형 작업을 진행했습니다.
+
+- `관련 글`
+  - [[4차] Next.js 리그오브레전드 정보 프로젝트 (반응형 작업)](https://rarrit.github.io/mini/til/next-lol04/)
+
+![lol-mobile](https://github.com/user-attachments/assets/d70e528e-6efa-463c-b540-a04393562faf)
+
+### :joystick: Trouble Shooting
+
+- [[Next.js] Unhandled Runtime Error 해결](https://rarrit.github.io/troubleshooting/til/troubleshooting-next-ssr-csr/)
+- [[Next.js] use client 컴포넌트 metadata 에러](https://rarrit.github.io/troubleshooting/til/troubleshooting-meta/)
+- [[Next.js] CSR환경 서스펜스 사용하기 - 작성중]
+- [[Next.js] 에러바운더리 전역 설정 - 작성중]
+
+### :fire: 회고
+이번에 Next.js를 처음 사용해보면서 솔직히 편리한 부분이 많았다. 이전의 리액트에서는 여러가지 설정을 해주고 세팅하는 데 시간이 많이 걸렸던 기억이 있다 반면에 Next.js에서는 그런 번거로움을 상당 부분 덜어주었다. 특히 페이지 기반 라우팅이나 서버사이드 렌더링 같은 기능을 기본으로 제공하는 것이 매력적이었던 것 같았다. 또한 이미지 최적화와 SEO를 설정하는 부분도 Next.js의 가장 큰 강점이라고 생각함!
+
+#### :pushpin: Keep - 현재 만족하고 있는 부분
+Next.js로 간단한 미니 프로젝트를 구현할 수 있었다는 점. 
+
+#### :pushpin: Problem - 불편하게 느끼는 부분
+아직 나는 너무나 허접하다.
+
+#### :pushpin: Try - problem에 대한 해결책, 당장 실행 가능한 것
+지금의 열정 그대로 열심히 하다보면 더 나은 내가 될거라 생각하며 포기하지만 말자
+
+#### :pushpin: 추가 작업 예정
+- react query 사용해서 리팩토링하기
