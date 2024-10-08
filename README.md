@@ -168,7 +168,7 @@ api key값과 챔피언 로테이션 라우터 핸들러를 세팅했습니다..
 전역으로 설정된 로딩 및 에러를 구현했으며, 특정 이미지가 렌더링될 때 "로딩중" 문구를 기입하였습니다.
 
 - `관련 글`
-  - [[5차] Next.js 리그오브레전드 정보 프로젝트 (로딩 및 에러](https://rarrit.github.io/mini/til/next-lol05/)
+  - [[5차] Next.js 리그오브레전드 정보 프로젝트 (로딩 및 에러)](https://rarrit.github.io/mini/til/next-lol05/)
 
 ![lol-detail](https://github.com/user-attachments/assets/7d1a7b77-0cfb-4fc0-a632-53256c3a2f6d)
 
