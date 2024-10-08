@@ -2,7 +2,6 @@
 import { RIOT_BASE_URL } from "@/app/api/apiKey";
 import { ItemType } from "@/app/types/Item"
 import { getLatestVersionUrl } from "@/app/utils/serverApi";
-import Image from "next/image";
 import ItemDesc from "./itemDesc";
 
 type ItemCardProps = {
@@ -16,7 +15,7 @@ const ItemCard: React.FC<ItemCardProps> = async ({ item }) => {
     <div className="relative w-[calc(20%-10px)] bg-[rgba(0,0,0,.4)] rounded-[10px] max-n:w-[calc(25%-10px)] max-t:w-[calc(33.333%-10px)] max-m:w-[calc(50%-10px)] max-sm:w-full">
       <div className="info flex flex-col items-center justify-center p-[20px]">
         {item.image && (
-          <Image 
+          <img 
             src={`${RIOT_BASE_URL}/cdn/${latestVersion}/img/item/${item.image.full ? item.image.full : item.image.sprite}`} 
             className="rounded-[10px]"
             width={64}
