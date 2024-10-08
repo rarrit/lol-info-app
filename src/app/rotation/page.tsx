@@ -11,7 +11,7 @@ import Link from "next/link";
 const RotationPage = () => {
   const [rotationChampion, setRotationChampion] = useState<ChampionInfo[]>([]); 
   const [loading, setLoading] = useState<boolean>(true);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       const rotationsChampion = await getChampionRotation();
@@ -23,6 +23,7 @@ const RotationPage = () => {
 
     fetchData();
   }, []);
+  
 
   
 

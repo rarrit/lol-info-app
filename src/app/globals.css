@@ -64,4 +64,10 @@ body {
     background-position: top center;
     background-repeat: no-repeat;
   }
+  .bg-error {
+    padding-top: 180px;
+    background-size: 150px;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
 }
