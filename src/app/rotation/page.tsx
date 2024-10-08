@@ -10,6 +10,7 @@ import Link from "next/link";
 
 const RotationPage = () => {
   const [rotationChampion, setRotationChampion] = useState<ChampionInfo[]>([]); 
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +18,7 @@ const RotationPage = () => {
       console.log(rotationsChampion);
       // 필터링된 로테이션 챔피언 목록을 상태에 저장
       setRotationChampion(rotationsChampion);
+      setLoading(false);
     };
 
     fetchData();
@@ -25,17 +27,21 @@ const RotationPage = () => {
   
 
   return (
-
     <div id="championList" className="w-full bg-lol03 bg-fixed bg-center bg-no-repeat py-[60px] px-[15px]">
-      <div className="inner w-full max-w-[1440px] m-auto">
-        <h1 
-          className="flex justify-center text-[60px] mt-[30px] mb-[40px] max-m:text-[30px]"
-          style={{
-            textShadow: ".3px .3px 7px rgb(241, 215, 40, 1)",
-          }}
-        >Rotation Champion</h1>
+    <div className="inner w-full max-w-[1440px] m-auto">
+      <h1 
+        className="flex justify-center text-[60px] mt-[30px] mb-[40px] max-m:text-[30px]"
+        style={{
+          textShadow: ".3px .3px 7px rgb(241, 215, 40, 1)",
+        }}
+      >Rotation Champion</h1>
 
-        {rotationChampion.length > 0 ? (
+      { 
+        loading ? (
+          <div className="loading-ui fixed z-[9999] bg-[#111]">
+            <p className="bg-loading">쉿! 로테이션 데이터 받아오는중</p>
+          </div>
+        ) : rotationChampion.length > 0 ?(
           <ul className="list flex flex-wrap gap-[10px] w-full">
             {rotationChampion.map((champ) => (
               // <li key={champ.key}>
@@ -63,10 +69,10 @@ const RotationPage = () => {
           </ul>
         ) : (
           <p>로테이션 챔피언이 없습니다.</p>
-        )}
-
-      </div>
+        )
+      }
     </div>
+  </div> 
   );
 };
 
