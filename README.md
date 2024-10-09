@@ -1,21 +1,4 @@
----
-title: "[6차] Next.js 리그오브레전드 정보 프로젝트 완료"
-date: 2024-10-07
-layout: single
-toc: true
-toc_label: "목차"
-toc_icon: "align-left"
-toc_sticky: true
-categories:
-  - mini
-  - til
-tags:
-  - mini project
-author_profile: true
-sidebar_main: true
----
-
-## :ledger: [6차] Next.js 리그오브레전드 정보 프로젝트 
+## :ledger: Next.js 리그오브레전드 정보 프로젝트 
 
 ![lol-main](https://github.com/user-attachments/assets/257f9849-6fb8-4169-9e3f-4edce8e775d1)
 
