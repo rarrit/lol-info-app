@@ -1,4 +1,4 @@
-## :ledger: [6차] Next.js 리그오브레전드 정보 프로젝트 
+## :ledger: Next.js 리그오브레전드 정보 프로젝트 
 
 ![lol-main](https://github.com/user-attachments/assets/257f9849-6fb8-4169-9e3f-4edce8e775d1)
 
