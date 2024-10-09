@@ -1,4 +1,21 @@
-## :ledger: 리그오브레전드 정보 프로젝트 
+---
+title: "[6차] Next.js 리그오브레전드 정보 프로젝트 완료"
+date: 2024-10-07
+layout: single
+toc: true
+toc_label: "목차"
+toc_icon: "align-left"
+toc_sticky: true
+categories:
+  - mini
+  - til
+tags:
+  - mini project
+author_profile: true
+sidebar_main: true
+---
+
+## :ledger: [6차] Next.js 리그오브레전드 정보 프로젝트 
 
 ![lol-main](https://github.com/user-attachments/assets/257f9849-6fb8-4169-9e3f-4edce8e775d1)
 
@@ -168,7 +185,7 @@ api key값과 챔피언 로테이션 라우터 핸들러를 세팅했습니다..
 전역으로 설정된 로딩 및 에러를 구현했으며, 특정 이미지가 렌더링될 때 "로딩중" 문구를 기입하였습니다.
 
 - `관련 글`
-  - [[5차] Next.js 리그오브레전드 정보 프로젝트 (로딩 및 에러)](https://rarrit.github.io/mini/til/next-lol05/)
+  - [[5차] Next.js 리그오브레전드 정보 프로젝트 (로딩 및 에러](https://rarrit.github.io/mini/til/next-lol05/)
 
 ![lol-detail](https://github.com/user-attachments/assets/7d1a7b77-0cfb-4fc0-a632-53256c3a2f6d)
 
@@ -184,8 +201,8 @@ PC부터 MOBILE까지 확인할 수 있도록 반응형 작업을 진행했습�
 
 - [[Next.js] Unhandled Runtime Error 해결](https://rarrit.github.io/troubleshooting/til/troubleshooting-next-ssr-csr/)
 - [[Next.js] use client 컴포넌트 metadata 에러](https://rarrit.github.io/troubleshooting/til/troubleshooting-meta/)
-- [[Next.js] CSR환경 서스펜스 사용하기 - 작성중]
-- [[Next.js] 에러바운더리 전역 설정 - 작성중]
+- [[Next.js] CSR 환경에서 Suspense 사용해보았다.](https://rarrit.github.io/troubleshooting/til/troubleshooting-suspense/)
+- [[Next.js] 서버 컴포넌트에서 ERROR UI가 노출이 되지 않은 이유를 알아보자.](https://rarrit.github.io/troubleshooting/til/troubleshooting-error-ui/)
 
 ### :fire: 회고
 이번에 Next.js를 처음 사용해보면서 솔직히 편리한 부분이 많았다. 이전의 리액트에서는 여러가지 설정을 해주고 세팅하는 데 시간이 많이 걸렸던 기억이 있다 반면에 Next.js에서는 그런 번거로움을 상당 부분 덜어주었다. 특히 페이지 기반 라우팅이나 서버사이드 렌더링 같은 기능을 기본으로 제공하는 것이 매력적이었던 것 같았다. 또한 이미지 최적화와 SEO를 설정하는 부분도 Next.js의 가장 큰 강점이라고 생각함!
